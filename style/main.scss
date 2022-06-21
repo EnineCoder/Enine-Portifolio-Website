@@ -1,0 +1,20 @@
+// import pages
+@import "../style/Sass/pages/global";
+
+// import helpers
+@import "../style/Sass/helpers/mixins";
+@import "../style/Sass/helpers/variables";
+@import "../style/Sass/helpers/functions";
+@import "../style/Sass/layout/grid";
+
+// import header
+@import "../style/Sass/layout/header";
+
+// import layout
+@import "../style/Sass/pages/homepage";
+
+// import components
+@import "../style/Sass/components/buttons";
+
+// import footer
+@import "../style/Sass/layout/footer";

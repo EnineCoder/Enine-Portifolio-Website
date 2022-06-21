@@ -1,0 +1,269 @@
+/* Start Landing */
+.landing {
+  .container {
+    display: flex;
+    align-items: center;
+    @include responsive(mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .image {
+      flex: 1.9;
+      @include responsive(max-small) {
+        margin-bottom: 2rem;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+    .button {
+      flex: 2;
+      .btn:first-child {
+        background-color: #000;
+        color: #fff;
+        font-size: 30px;
+        border-radius: 35px;
+        padding: 20px;
+        width: 90%;
+        margin-bottom: 1rem;
+        display: block;
+        @include responsive(max-small) {
+          font-size: 25px;
+          width: 100%;
+        }
+      }
+      .btn:last-child {
+        font-size: 30px;
+        padding: 15px 30px;
+        border-radius: 35px;
+        @include responsive(max-small) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+/* End Landing */
+
+/* start resume*/
+.resume {
+  .container {
+    display: flex;
+    gap: 2rem;
+    @include responsive(mobile) {
+      flex-direction: column;
+    }
+    .text {
+      color: #555;
+      h3 {
+        font-size: 2rem;
+        color: $secondary-color;
+      }
+      p {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        font-size: 20px;
+        span {
+          font-weight: bold;
+        }
+      }
+      .desc {
+        display: flex;
+        ul {
+          li {
+            font-weight: bold;
+            color: $secondary-color;
+            margin-bottom: 0.5rem;
+          }
+          &:last-child {
+            margin-left: 3rem;
+            & li {
+              font-weight: normal;
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+    .image {
+      img {
+        max-width: 100%;
+        border-radius: 20px;
+      }
+    }
+  }
+}
+/* End resume*/
+/* Start card */
+.card {
+  .container {
+    .cards {
+      gap: 1rem;
+      h3 {
+        font-size: 1.5rem;
+        color: $secondary-color;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        font-size: 20px;
+        line-height: 1.6;
+        color: #555;
+      }
+    }
+  }
+}
+/* End card */
+/* Start people*/
+.people {
+  background-color: #eeeeee30;
+  .container {
+    h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: $secondary-color;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+    .testimonials {
+      height: 200px;
+      position: relative;
+      .icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        font-size: 3rem;
+        color: $secondary-color;
+        &.disappear {
+          display: none;
+        }
+        cursor: pointer;
+        @include responsive(mobile) {
+          font-size: 2rem;
+        }
+      }
+      .left {
+        left: 0;
+      }
+      .right {
+        right: 0;
+      }
+      .card {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        height: 100%;
+        opacity: 0;
+        left: 5rem;
+        width: 80%;
+        transition: 1s;
+        @include responsive(mobile) {
+          left: 2.5rem;
+          margin-left: 1rem;
+        }
+        &[data-slide] {
+          opacity: 1;
+          z-index: 1;
+        }
+        .image {
+          margin-right: 2rem;
+          @include responsive(mobile) {
+            margin-right: 0.5rem;
+          }
+          img {
+            @include circle(150px);
+            @include responsive(mobile) {
+              @include circle(100px);
+            }
+          }
+        }
+        .text {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          p {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: #7e7e7e;
+            @include responsive(mobile) {
+              font-size: 1rem;
+            }
+          }
+          h3 {
+            color: $secondary-color;
+            margin-bottom: 0;
+            @include responsive(mobile) {
+              font-size: 1.1rem;
+            }
+          }
+          span {
+            color: #252525;
+          }
+        }
+      }
+      ul {
+        display: flex;
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        li {
+          width: 50px;
+          height: 10px;
+          background-color: #f4f4f4;
+          margin-left: 10px;
+          cursor: pointer;
+          &.active {
+            background-color: $text-color;
+          }
+        }
+      }
+    }
+  }
+}
+/* End people*/
+
+/* Start FAQ */
+.faq {
+  .container {
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .faq-div {
+      padding: 1.4rem;
+      font-size: 1.5rem;
+      background-color: #f7f7f7;
+      user-select: none;
+      cursor: pointer;
+      border: {
+        bottom: 1px solid #d7d7d7;
+        left: 1px solid #d7d7d7;
+        right: 1px solid #d7d7d7;
+      }
+      &:first-of-type {
+        border-top: 1px solid #d7d7d7;
+      }
+    }
+    .text {
+      padding: 1.4rem;
+      color: $alt-text-color;
+      display: none;
+      transition: 0.5s;
+      border: {
+        bottom: 1px solid #d7d7d7;
+        left: 1px solid #d7d7d7;
+        right: 1px solid #d7d7d7;
+      }
+      span {
+        display: block;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+.faq-dis {
+  display: block;
+}
+/* End FAQ */

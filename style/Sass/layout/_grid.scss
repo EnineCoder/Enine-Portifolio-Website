@@ -1,0 +1,54 @@
+* {
+  @include prefix(box-sizing, border-box, webkit moz os);
+}
+.container {
+  padding: {
+    left: 15px;
+    right: 15px;
+  }
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  @include responsive(mobile) {
+    padding: {
+      left: 30px;
+      right: 30px;
+    }
+  }
+  @include responsive(small) {
+    width: 750px;
+    padding: {
+      left: 30px;
+      right: 30px;
+    }
+  }
+  @include responsive(medium) {
+    width: 970px;
+  }
+  @include responsive(large) {
+    width: 1170px;
+  }
+}
+
+%flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid-1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.5rem;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.5rem;
+}
+
+// Utilitites
+.py-1 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}

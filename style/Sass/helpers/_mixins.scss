@@ -1,0 +1,52 @@
+// Mixin for Responsive Design
+@mixin responsive($point) {
+  @if $point == "mobile" {
+    @media (max-width: 778px) {
+      @content;
+    }
+  } @else if $point == "max-small" {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $point == "small" {
+    @media (min-width: 778px) {
+      @content;
+    }
+  } @else if $point == "medium" {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $point == "large" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// Mixis for prefix
+@mixin prefix($property, $value, $prefixers: ()) {
+  @each $prefix in $prefixers {
+    #{"-" + $prefix + "-" + $property}: $value;
+  }
+  #{$property}: $value;
+}
+
+// Mixins for circle
+@mixin circle($dimension) {
+  width: $dimension;
+  height: $dimension;
+  border-radius: 50%;
+}
+
+// Mixins for Animation
+@mixin keyFrame($anime-name) {
+  @-webkit-keyframes #{$anime-name} {
+    @content;
+  }
+  @-moz-keyframes #{$anime-name} {
+    @content;
+  }
+  @keyframes #{$anime-name} {
+    @content;
+  }
+}
